@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure QR Code Reader</title>
+</head>
+<body>
+    <h1>Secure QR Code Reader</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <label for="file">Choose an image:</label>
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+        <button type="submit">Upload and Decode</button>
+    </form>
+
+    {% if decoded_data %}
+        <p>Decoded Data: {{ decoded_data }}</p>
+    {% endif %}
+</body>
+</html>
