@@ -26,6 +26,7 @@ import os
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -43,6 +44,7 @@ def index():
 
     return render_template('index.html', decoded_data=None)
 
+
 def process_image(image_path):
     img = cv2.imread(image_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -58,7 +60,9 @@ def process_image(image_path):
             decoded_secure_qr_data = secure_qr.decodeddata()
             return decoded_secure_qr_data
 
+        print("test comment ")
     return None
 
+
 if __name__ == '__main__':
-    app.run(port=4000,debug=True)
+    app.run(port=4000, debug=True)
